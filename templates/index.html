@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Classification</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>News Classification</h1>
+        <form method="POST" action="/predict">
+            <textarea name="news" rows="5" placeholder="Enter news text here..." required></textarea>
+            <button type="submit">Predict</button>
+        </form>
+        {% if results %}
+        <h2>Results:</h2>
+        <ul>
+            {% for model, prediction in results.items() %}
+                <li>{{ model }}: {{ prediction }}</li>
+            {% endfor %}
+        </ul>
+        <h3>Your input:</h3>
+        <p>{{ news }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
