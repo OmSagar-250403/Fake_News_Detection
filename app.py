@@ -92,8 +92,6 @@ def manual_testing(news):
     final_pred = max([pred_LR[0], pred_DT[0], pred_GBC[0], pred_RFC[0], 
                       pred_RNN_label[0][0], pred_LSTM_label[0][0], pred_BiLSTM_label[0][0]])
     
-    print("Hello World")
-    print(final_pred)
     
     return "FAKE" if final_pred == 0 else "REAL"
 
