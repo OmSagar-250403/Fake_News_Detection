@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 import joblib
 import pandas as pd
 import numpy as np
-import tensorflow as tf
+from keras.models import load_model
 import re
 import string
 import math
@@ -16,9 +16,9 @@ LR = joblib.load('Models/LogisticRegression.pkl')
 DT = joblib.load('Models/DecisionTree.pkl')
 GBC = joblib.load('Models/GradientBoostingClassifier.pkl')
 RFC = joblib.load('Models/RandomForestClassifier.pkl')
-RNN_model = tf.keras.models.load_model('Models/RNN_model.h5')
-LSTM_model = tf.keras.models.load_model('Models/LSTM_model.h5')
-BiLSTM_model = tf.keras.models.load_model('Models/BiLSTM_model.h5')
+RNN_model = load_model('Models/RNN_model.h5')
+LSTM_model = load_model('Models/LSTM_model.h5')
+BiLSTM_model = load_model('Models/BiLSTM_model.h5')
 
 
 def wordopt(text):
