@@ -4,11 +4,14 @@ import pandas as pd
 import numpy as np
 from keras.models import load_model
 import re
+import os
 import string
 import math
 
 # Initialize Flask app
 app = Flask(__name__)
+
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"  # Disable GPU
 
 # Load your saved models
 vectorization = joblib.load('Models/vectorization.pkl')
