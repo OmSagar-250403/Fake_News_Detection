@@ -32,7 +32,7 @@ This project is a Flask-based web application for detecting fake news articles u
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/fake-news-detection.git
+   git clone https://github.com/OmSagar-250403/Fake_News_Detection
    cd fake-news-detection
 
 
