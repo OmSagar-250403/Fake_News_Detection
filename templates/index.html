@@ -1,28 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News Classification</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <meta charset="UTF-8">
+  <title>Fake News📰 Detection System</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
 </head>
+
 <body>
-    <div class="container">
-        <h1>News Classification</h1>
-        <form method="POST" action="/predict">
-            <textarea name="news" rows="5" placeholder="Enter news text here..." required></textarea>
-            <button type="submit">Predict</button>
-        </form>
-        {% if results %}
-        <h2>Results:</h2>
-        <ul>
-            {% for model, prediction in results.items() %}
-                <li>{{ model }}: {{ prediction }}</li>
-            {% endfor %}
-        </ul>
-        <h3>Your input:</h3>
-        <p>{{ news }}</p>
+  <div class="login">
+    <h1>Fake News📰 Detector</h1>
+
+    <form action="{{ url_for('predict') }}" method="POST">
+      <textarea name="message" rows="6" cols="50" required="required" style="font-size: 18pt"></textarea>
+      <br> </br>
+      <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+
+      <div class="results">
+        {% if prediction %}
+          {% if prediction == "FAKE" %}
+            <h2 style="color:red;">⚠️ Looking Spam News📰</h2>
+          {% elif prediction == "REAL" %}
+            <h2 style="color:green;">✅ Looking Real News📰</h2>
+          {% endif %}
         {% endif %}
-    </div>
+      </div>
+    </form>
+  </div>
 </body>
 </html>
