@@ -55,7 +55,18 @@ BiLSTM_model.h5
 
 5. Open your web browser and navigate to http://127.0.0.1:5000 to access the application.
 
+   ![Screenshot (1)](https://github.com/user-attachments/assets/10c39a95-db33-49bb-b4f6-ea7398435cbd)
+
 6. Enter a news article in the text area and click "Predict" to see the result.
 
-![Screenshot (1)](https://github.com/user-attachments/assets/10c39a95-db33-49bb-b4f6-ea7398435cbd)
+   ![Screenshot (2)](https://github.com/user-attachments/assets/b308eb1e-b328-462f-89e5-bb09a43a976f)
+
+7. Prediction
+
+   ![Screenshot (3)](https://github.com/user-attachments/assets/03f05f8d-e103-4299-9fb4-0844c1943a6e)
+
+
+   
+
+
 
